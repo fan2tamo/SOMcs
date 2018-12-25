@@ -1,0 +1,58 @@
+﻿<Page
+    x:Class="SOMcs.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SOMcs"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Pivot Title="Pivot">
+            <PivotItem Header="Main">
+                <StackPanel>
+                    <Button Content="Initialize" Click="Button_Click" />
+                    <Button Content="Learning" Click="Button_Click_1" />
+                    <Canvas x:Name="canvas" Background="Transparent" 
+                            VerticalAlignment="Top" HorizontalAlignment="Left" />
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="Settings">
+                <Grid Height="300" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Row="0" Grid.Column="0" Text="Map Size" />
+                    <ComboBox x:Name="cbx_map_size" Grid.Row="0" Grid.Column="1" PlaceholderText="Select one side of a map"  SelectedValuePath="Content" >
+                        <ComboBoxItem Content="10" />
+                        <ComboBoxItem Content="30" />
+                        <ComboBoxItem Content="50" />
+                        <ComboBoxItem Content="100" />
+                    </ComboBox>
+                    <TextBox Grid.Row="1" Grid.Column="0" Text="Initial learning ratio" />
+                    <ComboBox x:Name="cbx_initial_learning_ratio" Grid.Row="1" Grid.Column="1" PlaceholderText="Select initial learning ratio" >
+                        <ComboBoxItem Content="0.1" />
+                        <ComboBoxItem Content="0.3" />
+                        <ComboBoxItem Content="0.5" />
+                        <ComboBoxItem Content="0.7" />
+                    </ComboBox>
+                    <TextBox Grid.Row="2" Grid.Column="0" Text="initial learning radius" />
+                    <ComboBox x:Name="cbx_initial_learning_radius" Grid.Row="2" Grid.Column="1" PlaceholderText="Select initial learning ratio(%)" >
+                        <ComboBoxItem Content="0.3" />
+                        <ComboBoxItem Content="0.5" />
+                        <ComboBoxItem Content="0.7" />
+                    </ComboBox>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+
+    </Grid>
+</Page>
